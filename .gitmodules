@@ -1,0 +1,4 @@
+[submodule "libsodium"]
+	path = libsodium
+	ignore = dirty
+	url = git://github.com/jedisct1/libsodium.git

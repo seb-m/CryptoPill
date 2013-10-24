@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CryptoPill' target in the 'CryptoPill' project
+//
+
+#ifdef __OBJC__
+  @import Foundation;
+#endif
