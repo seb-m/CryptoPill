@@ -26,7 +26,6 @@ int edmont_conv(unsigned char r[crypto_scalarmult_curve25519_BYTES],
   fe25519_invert(&inv, &den);
 
   fe25519_mul(&u, &num, &inv);
-  fe25519_freeze(&u);
 
   fe25519_pack(r, &u);
   return 0;
