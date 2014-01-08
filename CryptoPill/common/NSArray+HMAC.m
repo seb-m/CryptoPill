@@ -23,8 +23,7 @@
   CCHmacInit(&ctx, kCCHmacAlgSHA256, [key bytes], [key length]);
 
   for (id item in self) {
-    if (![item isKindOfClass:[NSData class]])
-      return nil;
+    NSAssert([item isKindOfClass:[NSData class]], @"Item must be an NSData");
 
     NSData *itemData = (NSData *)item;
 

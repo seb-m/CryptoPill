@@ -13,6 +13,8 @@
 
 @interface NSArray (HMAC)
 
+// The NSArray elements must all be NSData instances otherwise an assertion
+// is triggered. This method returns the hmac value or nil if it failed.
 - (NSData *)hmacSha256WithKey:(SecureData *)key;
 
 @end

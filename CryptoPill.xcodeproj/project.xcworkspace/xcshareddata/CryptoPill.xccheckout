@@ -2,37 +2,39 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>546EC5BE-783D-455F-A31F-404B65E39A44</string>
+	<string>DD1FF116-6804-422D-964B-7BDDEC4D586F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>CryptoPill</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5B018566-6E43-4317-89E8-CFE174F4DA67</key>
-		<string>ssh://cypherpunk.dbzteam.org:22/home/ookoi/git/CryptoPill.git</string>
+		<key>43FFC11A-3158-4B2F-B467-FA6E19D4EA3A</key>
+		<string>ssh://github.com/seb-m/CryptoPill.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CryptoPill.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5B018566-6E43-4317-89E8-CFE174F4DA67</key>
+		<key>43FFC11A-3158-4B2F-B467-FA6E19D4EA3A</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://cypherpunk.dbzteam.org:22/home/ookoi/git/CryptoPill.git</string>
+	<string>ssh://github.com/seb-m/CryptoPill.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>5B018566-6E43-4317-89E8-CFE174F4DA67</string>
+	<string>43FFC11A-3158-4B2F-B467-FA6E19D4EA3A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5B018566-6E43-4317-89E8-CFE174F4DA67</string>
+			<string>43FFC11A-3158-4B2F-B467-FA6E19D4EA3A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>CryptoPill</string>
+			<string>CryptoPillPublic</string>
 		</dict>
 	</array>
 </dict>
