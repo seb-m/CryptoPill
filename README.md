@@ -2,8 +2,18 @@
 
 CryptoPill is the crypto code used by [Core Secret](http://coresecret.io). This is a standalone crypto library heavily relying on the crypto primitives introduced by [NaCl](http://nacl.cr.yp.to/).
 
+## Install (CocoaPods)
 
-## Install
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AFNetworking in your projects. See the ["Getting Started" guide for more information](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking).
+
+#### Podfile
+
+```ruby
+platform :ios, '7.0'
+pod "CryptoPill"
+```
+
+## Install (Manual)
 
 CryptoPill depends on [libsodium](https://github.com/jedisct1/libsodium) but this library is not directly provided by CryptoPill and must instead be included as a submodule. Follow these instructions to clone it and keep it in sync.
 
