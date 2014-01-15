@@ -17,10 +17,10 @@
   NSMutableString *hex = [NSMutableString stringWithCapacity:[self length] * 3];
   for (NSInteger i = 0; i < [self length]; ++i) {
     [hex appendFormat:@"%02X ", *((uint8_t *)[self bytes] + i)];
-    if (i % 8 == 7)
+    if ((i % 8 == 7) && (i + 1 < [self length]))
       [hex appendString:@"\n"];
   }
-  return [NSString stringWithString:[hex substringToIndex:[hex length] - 1]];
+  return [NSString stringWithString:hex];
 }
 
 - (NSString *)hexadecimalEncodingCompact {
@@ -29,7 +29,7 @@
   NSMutableString *hex = [NSMutableString stringWithCapacity:[self length] * 2];
   for (NSInteger i = 0; i < [self length]; ++i)
     [hex appendFormat:@"%02X", *((uint8_t *)[self bytes] + i)];
-  return [NSString stringWithString:[hex substringToIndex:[hex length] - 1]];
+  return [NSString stringWithString:hex];
 }
 
 @end
