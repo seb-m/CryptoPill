@@ -28,4 +28,16 @@
 + (NSData *)boxDataOpen:(NSData *)encryptedData publicKey:(NSData *)publicKey secretKey:(SecureData *)secretKey;
 + (SecureData *)boxSecureDataOpen:(NSData *)encryptedData publicKey:(NSData *)publicKey secretKey:(SecureData *)secretKey;
 
+// Helpers to remove / insert leading zero bytes. See NaCl documentation for more
+// details.
+//
+// Example:
+//  NSData *encryptedData = [Box boxRemoveZeroBytes:[Box boxData:plaintext publicKey:pk secretKey:sk]]
+//  NSData *decryptedData = [Box boxDataOpen:[Box boxInsertZeroBytes:encryptedData]
+//                                 publicKey:pk
+//                                 secretKey:sk]
+//
++ (NSData *)boxRemoveZeroBytes:(NSData *)encryptedData;
++ (NSData *)boxInsertZeroBytes:(NSData *)encryptedData;
+
 @end

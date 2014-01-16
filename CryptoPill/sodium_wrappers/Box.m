@@ -130,4 +130,21 @@
                                   length:[data length] - crypto_box_zerobytes()];
 }
 
++ (NSData *)boxRemoveZeroBytes:(NSData *)encryptedData {
+  if (!encryptedData || [encryptedData length] < crypto_box_zerobytes())
+    return nil;
+
+  return [NSData dataWithBytes:([encryptedData bytes] + crypto_box_zerobytes())
+                        length:([encryptedData length] - crypto_box_zerobytes())];
+}
+
++ (NSData *)boxInsertZeroBytes:(NSData *)encryptedData {
+  if (!encryptedData)
+    return nil;
+
+  NSMutableData *encryptedDataWithZeroBytes = [NSMutableData dataWithLength:crypto_box_zerobytes()];
+  [encryptedDataWithZeroBytes appendData:encryptedData];
+  return encryptedDataWithZeroBytes;
+}
+
 @end

@@ -60,16 +60,16 @@
   for (int i = 0; i < 100; ++i) {
     SecureData *sk = [SchnorrKeypair generateSecretKey];
     STAssertTrue(sk != nil, nil);
-    
+
     NSData *pk_ed = [SchnorrKeypair publicKeyFromSecretKey:sk];
     STAssertTrue(pk_ed != nil, nil);
-    
+
     NSData *pk_mont = [Curve25519 scalarmultCurve25519BaseWithScalar:sk];
     STAssertTrue(pk_mont != nil, nil);
-    
+
     NSData *pk_ed_conv = [Curve25519 publicKeyFromEd25519PublicKey:pk_ed];
     STAssertTrue(pk_ed_conv != nil, nil);
-    
+
     BOOL success = [pk_mont isEqualToData:pk_ed_conv];
     STAssertTrue(success, nil);
   }

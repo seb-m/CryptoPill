@@ -90,30 +90,30 @@ int test_schnorr_signature_basic(int simulate_failure) {
   uint8_t signature[SCHNORR_SIGN_SIGNATUREBYTES];
   const unsigned char message[] = "A short message to sign.";
   int ret;
-  
+
   ret = schnorr_secretkey(sk);
   if (ret) {
     printf("error generate secret key %d\n", ret);
     return ret;
   }
-  
+
   ret = schnorr_publickey(pk, sk);
   if (ret) {
     printf("error compute public key %d\n", ret);
     return ret;
   }
-  
+
   ret = schnorr_sign(signature, sk, pk, message, strlen((const char *)message));
   if (ret) {
     printf("error signature %d\n", ret);
     return ret;
   }
-  
+
   if (simulate_failure) {
     signature[20] = ~signature[20];
     signature[42] = ~signature[42];
   }
-  
+
   ret = schnorr_sign_verify(pk, signature, message, strlen((const char *)message));
   if (ret && !simulate_failure) {
     printf("error invalid signature %d\n", ret);
@@ -148,13 +148,13 @@ int test_schnorr_signature_basic(int simulate_failure) {
 - (void)testSchnorrSignatureBasic {
   int i;
   int loop_count;
-  
+
   // Expected run
   loop_count = 256;
   for (i = 0; i < loop_count; ++i)
     STAssertTrue(test_schnorr_signature_basic(0) == 0,
                  [NSString stringWithFormat:@"test schnorr signature failed at iteration %d", i]);
-  
+
   // Simulate failures
   loop_count = 64;
   for (i = 0; i < loop_count; ++i)

@@ -45,4 +45,16 @@ extern const uint32_t kScryptpDefault;
 + (NSData *)secretBoxDataOpen:(NSData *)encryptedData password:(SecureData *)password;
 + (SecureData *)secretBoxSecureDataOpen:(NSData *)encryptedData password:(SecureData *)password;
 
+// Helpers to remove / insert leading zero bytes. See NaCl documentation for more
+// details.
+//
+// Example:
+//  NSData *encryptedData = [SecretBox secretBoxRemoveZeroBytes:[SecretBox secretBoxData:plaintext
+//                                                                                   key:secretKey]]
+//  NSData *decryptedData = [SecretBox secretBoxDataOpen:[SecretBox secretBoxInsertZeroBytes:encryptedData]
+//                                                   key:secretKey]
+//
++ (NSData *)secretBoxRemoveZeroBytes:(NSData *)encryptedData;
++ (NSData *)secretBoxInsertZeroBytes:(NSData *)encryptedData;
+
 @end

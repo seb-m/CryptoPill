@@ -240,4 +240,21 @@ static BOOL validScryptParameters(uint64_t N, uint32_t r, uint32_t p) {
                                    key:secretKey];
 }
 
++ (NSData *)secretBoxRemoveZeroBytes:(NSData *)encryptedData {
+  if (!encryptedData || [encryptedData length] < crypto_secretbox_zerobytes())
+    return nil;
+
+  return [NSData dataWithBytes:([encryptedData bytes] + crypto_secretbox_zerobytes())
+                        length:([encryptedData length] - crypto_secretbox_zerobytes())];
+}
+
++ (NSData *)secretBoxInsertZeroBytes:(NSData *)encryptedData {
+   if (!encryptedData)
+     return nil;
+
+  NSMutableData *encryptedDataWithZeroBytes = [NSMutableData dataWithLength:crypto_secretbox_zerobytes()];
+  [encryptedDataWithZeroBytes appendData:encryptedData];
+  return encryptedDataWithZeroBytes;
+}
+
 @end
