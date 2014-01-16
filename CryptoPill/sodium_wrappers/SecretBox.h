@@ -50,9 +50,9 @@ extern const uint32_t kScryptpDefault;
 //
 // Example:
 //  NSData *encryptedData = [SecretBox secretBoxRemoveZeroBytes:[SecretBox secretBoxData:plaintext
-//                                                                                   key:secretKey]]
+//                                                                                   key:secretKey]];
 //  NSData *decryptedData = [SecretBox secretBoxDataOpen:[SecretBox secretBoxInsertZeroBytes:encryptedData]
-//                                                   key:secretKey]
+//                                                   key:secretKey];
 //
 + (NSData *)secretBoxRemoveZeroBytes:(NSData *)encryptedData;
 + (NSData *)secretBoxInsertZeroBytes:(NSData *)encryptedData;

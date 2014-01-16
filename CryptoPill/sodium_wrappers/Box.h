@@ -32,10 +32,10 @@
 // details.
 //
 // Example:
-//  NSData *encryptedData = [Box boxRemoveZeroBytes:[Box boxData:plaintext publicKey:pk secretKey:sk]]
+//  NSData *encryptedData = [Box boxRemoveZeroBytes:[Box boxData:plaintext publicKey:pk secretKey:sk]];
 //  NSData *decryptedData = [Box boxDataOpen:[Box boxInsertZeroBytes:encryptedData]
 //                                 publicKey:pk
-//                                 secretKey:sk]
+//                                 secretKey:sk];
 //
 + (NSData *)boxRemoveZeroBytes:(NSData *)encryptedData;
 + (NSData *)boxInsertZeroBytes:(NSData *)encryptedData;
